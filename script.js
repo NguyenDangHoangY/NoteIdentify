@@ -22,12 +22,41 @@
     {"name": "B5", "pitch": 987.8}
   ]
 
+  var choosenNotes= ["C4", "D4", "E4", "F4", "G4", "A4", "B4"];
+  var chossenNotePitch = []
+
+  showChoosenNotes();
+
+  function showChoosenNotes(){
+    document.querySelectorAll("div.notes button").forEach(b =>{
+      b.style.backgroundColor = "white";
+    });
+    choosenNotes.forEach(n => {
+      document.querySelector("#" + n + "").style.backgroundColor = "#009688"
+    });
+
+    //Map choosen noteName to pitch
+    chossenNotePitch = [];
+    choosenNotes.forEach(n =>{
+      chossenNotePitch.push({"name": n, "pitch": notes.find(note =>(note.name == n)).pitch});
+    })
+  }
+
+  function choseNote(note){
+    if(!choosenNotes.includes(note)){          //checking weather array contain the id
+      choosenNotes.push(note);               //adding to array because value doesnt exists
+    }else{
+      choosenNotes.splice(choosenNotes.indexOf(note), 1);  //deleting
+    }
+    showChoosenNotes();
+  }
+
   var noteToPitch = 1;
 
   var note;
 
   function randomNote(){
-    note = notes[Math.floor(Math.random() * notes.length)];
+    note = chossenNotePitch[Math.floor(Math.random() * chossenNotePitch.length)];
     return note;
   }
   
