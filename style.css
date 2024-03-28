@@ -1,0 +1,144 @@
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container{
+    margin: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media screen and (max-width:700px){
+    .wrapper{
+        flex-direction: column;
+    }
+}
+
+button{
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.arrow{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    transition: .5s;
+}
+
+.arrow::before,
+.arrow::after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 8px;
+    height: 40px;
+    border-radius: 5px;
+    background: #009688;
+    transition: .5s;
+}
+
+.arrow1::before{
+    left: 0;
+    transform: translate(4px, -50%) rotate(-47deg);
+}
+
+.arrow1::after{
+    right: 0;
+    transform: translate(-4px, -50%) rotate(47deg);
+}
+
+
+
+
+.arrow2::before,
+.arrow2::after{
+    top: 5% !important;
+    left: 32%;
+}
+
+.arrow2::before{
+    top: 0;
+    transform: translate(4px, -30%) rotate(-52deg);
+}
+
+.arrow2::after{
+    bottom: 0;
+    transform: translate(4px, 20%) rotate(52deg);
+}
+
+.chevron1.active{
+    transform: rotate(-180deg);
+}
+
+
+
+.chevron2.active1::before{
+    transform: translate(4px, -50%) rotate(45deg);
+}
+.chevron2.active1::after{
+    transform: translate(-4px, -50%) rotate(-45deg);
+}
+
+
+.chevron3.active2::before{
+    transform: translate(4px, -50%) rotate(-133deg);
+}
+
+.chevron3.active2::after{
+    transform: translate(-4px, -50%) rotate(133deg);
+}
+
+
+
+.chevron4.active3{
+    transform: rotate(-180deg);
+}
+
+.chevron5.active4::before{
+    transform: translate(4px, -30%) rotate(52deg);
+}
+.chevron5.active4::after{
+    transform: translate(4px, 20%) rotate(-52deg);
+}
+
+
+.chevron6.active5::before{
+    transform: translate(4px, -30%) rotate(-129deg);
+}
+
+.chevron6.active5::after{
+    transform: translate(4px, 20%) rotate(129deg);
+}
+
+#wrapper1{
+    display: flex;
+    justify-content: space-around;
+}
+
+.element{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#wrapper2{
+    display: flex;
+}
+
+.notes{
+    padding: 2px;
+}
