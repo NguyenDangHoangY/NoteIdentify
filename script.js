@@ -43,6 +43,12 @@
   }
 
   function choseNote(note){
+    //Play the pitch
+    const pitch = notes.find(n => n.name == note).pitch;
+    playNote(pitch, 'sine');
+    playNote(pitch, 'square');
+    playNote(pitch, 'triangle');
+    playNote(pitch, 'sawtooth');
     if(!choosenNotes.includes(note)){          //checking weather array contain the id
       choosenNotes.push(note);               //adding to array because value doesnt exists
     }else{
